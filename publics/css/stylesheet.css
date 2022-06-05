@@ -1,0 +1,40 @@
+* {
+    font-family: 'Helvetica';
+}
+
+.login-form h3 {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 32px 0 32px 0;
+}
+
+
+/* breadcumb */
+#bc::before {
+    content: ">";
+}
+/* color */
+.outline-sub-primary {
+    border-color: #AEB7E1;
+}
+
+.text-sub-primary {
+    color: #AEB7E1;
+}
+
+.bg-sub-primary {
+    background: #AEB7E1;
+}
+
+/* bintang merah form add car */
+.control-label:after {
+    content:"*";
+    color:red;
+}
+
+/* hover */
+.box:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
