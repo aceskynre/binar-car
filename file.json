@@ -1,0 +1,72 @@
+[
+    {
+        "ID": 1,
+        "car": " Brio ",
+        "price": "250.000.000 ",
+        "uploadImg": "8534.jpg",
+        "start": "17 Maret 2022",
+        "finish": "26 Maret 2022 ",
+        "created": "26 Maret 2022 ",
+        "updated": "26 Maret 2022 "
+    },
+    {
+        "ID": 2,
+        "car": " Avanza ",
+        "price": " 370.000.000",
+        "uploadImg": "53846.jpg",
+        "start": "17 Maret 2022",
+        "finish": "26 Maret 2022 ",
+        "created": "26 Maret 2022 ",
+        "updated": "26 Maret 2022 "
+    },
+    {
+        "ID": 3,
+        "car": " bmw ",
+        "price": " 500.000.000",
+        "uploadImg": "116507.jpg",
+        "start": "17 Maret 2022",
+        "finish": "26 Maret 2022 ",
+        "created": "26 Maret 2022 ",
+        "updated": "26 Maret 2022 "
+    },
+    {
+        "ID": 4,
+        "car": " xenia ",
+        "price": " 170.000.000",
+        "uploadImg": "116503.jpg",
+        "start": "17 Maret 2022",
+        "finish": "26 Maret 2022 ",
+        "created": "26 Maret 2022 ",
+        "updated": "26 Maret 2022 "
+    },
+    {
+        "ID": 5,
+        "car": " Avanza ",
+        "price": " 127.000.000",
+        "uploadImg": "8534.jpg",
+        "start": "17 Maret 2022",
+        "finish": "26 Maret 2022 ",
+        "created": "26 Maret 2022 ",
+        "updated": "26 Maret 2022 "
+    },
+    {
+        "ID": 6,
+        "car": " xenia ",
+        "price": " 200.000.000",
+        "uploadImg": "116503.jpg",
+        "start": "17 Maret 2022",
+        "finish": "26 Maret 2022 ",
+        "created": "26 Maret 2022 ",
+        "updated": "26 Maret 2022 "
+    },
+    {
+        "ID": 7,
+        "car": " esemka ",
+        "price": " 250.000.000",
+        "uploadImg": "116505.jpg",
+        "start": "17 Maret 2022",
+        "finish": "26 Maret 2022 ",
+        "created": "26 Maret 2022 ",
+        "updated": "26 Maret 2022 "
+    }
+]

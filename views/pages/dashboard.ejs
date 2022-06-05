@@ -1,0 +1,193 @@
+<%- include('../partials/head.ejs') %> 
+ 
+  <div class="dashboard">
+      <div class="row no-gutters">
+        <%- include('../partials/bsidebar.ejs') %> 
+        <div class="dashboard-content" style="width: 95%;">
+          <%- include('../partials/navbar.ejs') %> 
+          <div class="row no-gutters main-dashboard">
+            <%- include('../partials/lsidebar.ejs') %> 
+                  
+            <div class="col-10 main-content" style="background: #F4F5F7;">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" style="background: #F4F5F7;">
+                  <li class="breadcrumb-item font-weight-bold"><a href="<%= href %> " class="text-dark">Dashboard</a></li>
+                  <li class="breadcrumb-item text-dark active" aria-current="page" id="bc">Dashboard</li>
+                </ol>
+              </nav>      
+              <div class="tittle-content ml-3 ">
+                <p class="font-weight-bold" style="font-size: 20px; height: 42px;">Dashboard</p>
+              </div>
+              <div class="sub-tittle-content ml-3 pb-4">
+                <p class="" style="font-size: 14px; height: 42px;"><img src="/images/list-car.png" alt="">List Order</p>
+                <table class="table table-borderless">
+                  <thead>
+                    <tr style="background: #CFD4ED;">
+                      <th scope="col">No.</th>
+                      <th scope="col">User Email</th>
+                      <th scope="col">Car</th>
+                      <th scope="col">Start Rent</th>
+                      <th scope="col">Finish Rent</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <% datas.forEach(data => { %>
+                      <tr>
+                        <th scope="row" style="font-weight: normal;"><%- data.ID %> </th>
+                        <td><%- data.userEmail %></td>
+                        <td><%- data.car %></td>
+                        <td><%- data.start %></td>
+                        <td><%- data.finish %></td>
+                        <td><%- data.price %></td>
+                        <td><%- data.status %></td>
+                      </tr>
+                     <% }) %>
+                  </tbody>
+                </table>
+
+                <div class="row no-gutters pagenation-section">
+                  <div class="row no-gutters left-pagenation w-50">
+                    <div class="col-2 limit mr-3">
+                      <p>Limit</p>
+                      <div class="input-group">
+                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon" style="width: 58px;">
+                          <option selected>10</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="col-3 jump">
+                      <p>Jump to page</p>
+                      <div class="input-group">
+                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                        <div class="input-group-append">
+                          <button class="btn btn-primary btn-outline-primary text-light" type="button">Go</button>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="right-pagenation w-50 d-flex justify-content-end align-items-end">
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" style="background: #CFD4ED;" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#">9</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>    
+              </div>
+                    
+              <div class="sub-tittle-content ml-3 pb-4 pt-4">
+                <p class="" style="font-size: 14px; height: 42px;"><img src="/images/list-car.png" alt="">List Car</p>
+                <table class="table table-borderless">
+                  <thead>
+                    <tr style="background: #CFD4ED;">
+                      <th scope="col">No.</th>
+                      <th scope="col">Car</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Start Rent</th>
+                      <th scope="col">Finish Rent</th>
+                      <th scope="col">Created at</th>
+                      <th scope="col">Updated at</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <% datas.forEach(data => { %>
+                     <tr>
+                      <th scope="row" style="font-weight: normal;"><%- data.ID %></th>
+                      <td><%- data.car %></td>
+                      <td><%- data.category %></td>
+                      <td><%- data.price %></td>
+                      <td><%- data.start %></td>
+                      <td><%- data.finish %></td>
+                      <td><%- data.created %></td>
+                      <td><%- data.updated %></td>
+                    </tr>
+                    <% }) %>
+                  </tbody>
+                </table>
+                <div class="row no-gutters pagenation-section">
+                  <div class="row no-gutters left-pagenation w-50">
+                    <div class="col-2 limit mr-3">
+                      <p>Limit</p>
+                      <div class="input-group">
+                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon" style="width: 58px;">
+                          <option selected>10</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="col-3 jump">
+                      <p>Jump to page</p>
+                      <div class="input-group">
+                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                        <div class="input-group-append">
+                          <button class="btn btn-primary btn-outline-primary text-light" type="button">Go</button>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="right-pagenation w-50 d-flex justify-content-end align-items-end">
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" style="background: #CFD4ED;" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#">9</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>         
+            </div>
+          </div>     
+        </div>    
+      </div>
+  </div>       
+
+<%- include('../partials/tail.ejs') %>

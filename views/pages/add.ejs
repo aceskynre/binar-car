@@ -1,0 +1,111 @@
+<%- include('../partials/head.ejs') %> 
+ 
+  <div class="dashboard">
+      <div class="row no-gutters">
+        <%- include('../partials/bsidebar.ejs') %> 
+        <div class="dashboard-content" style="width: 95%;">
+        
+            <!--Navbar-->
+            <%- include('../partials/navbar.ejs') %> 
+            <div class="row no-gutters main-dashboard">
+            <%- include('../partials/lsidebar.ejs') %>    
+            <div class="col-10 main-content pb-5" style="background: #F4F5F7;">
+              <nav aria-label="breadcrumb" >
+                <ol class="breadcrumb" style="background: #F4F5F7;">
+                  <li class="breadcrumb-item font-weight-bold"><a href="<%= href %> " class="text-dark">Cars</a></li>
+                  <li class="breadcrumb-item font-weight-bold" id="bc"><a href="#" class="text-dark">List Car</a></li>
+                  <li class="breadcrumb-item text-dark active" aria-current="page" id="bc"><%= titleContent %></li>
+                </ol>
+              </nav>
+
+              <div class="tittle-content ml-3 d-flex justify-content-between">
+                <p class="font-weight-bold" style="font-size: 20px; height: 42px;"><%= titleContent %></p>
+              </div>
+
+              <!-- form edit-->
+              <form class="input-off bg-light ml-3 mr-3 pl-3 mb-5" action="<%= action %> " method="post">
+                <div class="row form-group no-gutters d-flex justify-content-start pt-3">
+                  <label  class="col-2 d-flex align-items-center required control-label" style="margin: 0;">Name</label>
+                  <input name="nama" value="<%= selectedData.car ? selectedData.car : '' %> " type="text" class=" col-4 form-control pl-2" placeholder="Masukkan Nama" aria-label="Nama" aria-describedby="basic-addon1" required="required">
+                </div>
+                <div class="row no-gutters d-flex justify-content-start pt-3">
+                  <label class="col-2 d-flex align-items-center required control-label" style="margin: 0;">price</label>
+                  <input name="harga" value="<%= selectedData.price ? selectedData.price : '' %> " type="text" class=" col-4 form-control pl-2" placeholder="Masukkan Harga" aria-label="Harga" aria-describedby="basic-addon1" required="required">
+                </div>
+                <div class="row no-gutters d-flex justify-content-start pt-3">
+                  <label class="col-2 d-flex align-items-start required control-label" style="margin: 0;">Upload</label>
+                  <div class="upload-file col-4">
+                    <div class="custom-file form-control pl-2">
+                      <input name="upload" value="<%= selectedData.upload ? selectedData.upload : '' %> " type="file" class="custom-file-input " id="customFile" required="required">
+                      <label class="custom-file-label " for="customFile">Choose file</label>
+                    </div>
+                    <small id="fileHelp" class="form-text text-muted"><p style="margin: 0">File size max. 2MB</p></small>
+                  </div>
+                </div>
+                <div class="row no-gutters d-flex justify-content-start pt-3 pb-3">
+                  <label for="date" class="col-2 d-flex align-items-center required" style="margin: 0;">Start Rent</label>
+                  <div class="col-4">
+                    <div class="input-group date datepicker" id="datepicker">
+                      <input name="start" value="<%= selectedData.start ? selectedData.start : '' %> " type="text" class="form-control">
+                      <span class="input-group-append">
+                          <span class="input-group-text bg-white">
+                              <i class="fa fa-calendar"></i>
+                          </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row no-gutters d-flex justify-content-start pt-3 pb-3">
+                  <label for="date" class="col-2 d-flex align-items-center required" style="margin: 0;">Finish Rent</label>
+                  <div class="col-4">
+                    <div class="input-group date datepicker" id="datepicker">
+                      <input name="finish" value="<%= selectedData.finish ? selectedData.finish : '' %> " type="text" class="form-control">
+                      <span class="input-group-append">
+                          <span class="input-group-text bg-white">
+                              <i class="fa fa-calendar"></i>
+                          </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row no-gutters d-flex justify-content-start pt-3 pb-3">
+                  <label for="date" class="col-2 d-flex align-items-center required" style="margin: 0;">Created At</label>
+                  <div class="col-4">
+                    <div class="input-group date datepicker" id="datepicker">
+                      <input name="created" value="<%= selectedData.created ? selectedData.created : '' %> " type="text" class="form-control">
+                      <span class="input-group-append">
+                          <span class="input-group-text bg-white">
+                              <i class="fa fa-calendar"></i>
+                          </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row no-gutters d-flex justify-content-start pt-3 pb-3">
+                  <label for="date" class="col-2 d-flex align-items-center required" style="margin: 0;">Updated At</label>
+                  <div class="col-4">
+                    <div class="input-group date datepicker" id="datepicker">
+                      <input name="updated" value="<%= selectedData.updated ? selectedData.updated : '' %> " type="text" class="form-control">
+                      <span class="input-group-append">
+                          <span class="input-group-text bg-white">
+                              <i class="fa fa-calendar"></i>
+                          </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <a href="/cars">
+                  <button type="button" class="btn btn-outline-primary mr-2">Cancel</button>
+                </a>
+                <button type="submit" class="btn bg-sub-primary text-light mr-2 ml-3">Save</button>
+              </form>  
+            </div>
+          </div>    
+        </div>     
+      </div>
+  </div>       
+
+<%- include('../partials/tail.ejs') %>
+                  

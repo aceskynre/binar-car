@@ -1,0 +1,75 @@
+<%- include('../partials/head.ejs') %> 
+ 
+  <div class="dashboard">
+      <div class="row no-gutters">
+        <%- include('../partials/bsidebar.ejs') %> 
+
+        <div class="dashboard-content" style="width: 95%;">
+         
+            <!-- navbar -->
+          <%- include('../partials/navbar.ejs') %> 
+
+          <div class="row no-gutters main-dashboard">
+            <%- include('../partials/lsidebar.ejs') %> 
+                  
+            <div class="col-10 main-content" style="background: #F4F5F7;">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" style="background: #F4F5F7;">
+                  <li class="breadcrumb-item font-weight-bold"><a href="<%= href %> " class="text-dark">Cars</a></li>
+                  <li class="breadcrumb-item text-dark active" aria-current="page" id="bc">List Car</li>
+                </ol>
+              </nav>
+
+              <div class="tittle-content ml-3 d-flex justify-content-between">
+                <p class="font-weight-bold" style="font-size: 20px; height: 42px;">List Car</p>
+                <button class="btn btn-primary mr-3 h-75 d-inline-block" type="submit"><a href="/add" class="text-decoration-none text-light">+ Add New Car</a></button>
+              </div>
+              <div class="category ml-3">
+                <button type="button" class="btn btn-outline-primary mr-2">All</button>
+                <button type="button" class="btn btn text-sub-primary outline-sub-primary mr-2">Small</button>
+                <button type="button" class="btn btn text-sub-primary outline-sub-primary mr-2">Medium</button>
+                <button type="button" class="btn btn text-sub-primary outline-sub-primary mr-2">Large</button>
+              </div>
+
+              <div class="card-group">
+                <% datas.forEach(data => { %>
+                  <div class="card-list ml-3 pt-4">
+                    <div class="card" style="width: 20rem;">
+                      <div class="card-body">
+                        <img src="/images/car.png" alt="mobil">
+                        <p class="card-title tipe-mobil" style="font-weight: 400; font-size: 14px; "><%- data.car %></p>
+                        <p class="card-text harga-mobil" style="font-weight: 700; font-size: 16px;"><%- data.price %> / hari</p>
+                        <p class="rent-duration" style="font-weight: 300; font-size: 14px;"><img src="/images/fi_key.png" alt=""> <%- data.startRent %> - <%- data.finishRent %></p>
+                        <p class="time-updated" style="font-weight: 300; font-size: 14px;"><img src="/images/fi_clock.png" alt=""> Updated at <%- data.updatedAt %></p>
+                        <div class="row no-gutters d-flex justify-content-between">
+                            <button type="button" class="btn btn-outline-danger btn-inline" style="width: 48%;" data-toggle="modal" data-target="#exampleModal"><img src="/images/fi_trash.png" alt="">Delete</button>
+                            <button class="btn btn-success btn-inline" type="submit" style="width: 48%;"><img src="/images/fi_edit.png" alt=""><a href="/edit/<%- data.ID %>" class="text-decoration-none text-light">Edit</a></button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog d-flex justify-content-center">
+                                  <div class="modal-content d-flex align-items-center" style="width: 387px; ">
+                                      <div class="card-body text-center">
+                                          <img class="mb-4 mt-4" src="/images/bep.png" alt="" style="width: 153; height: 121;">
+                                          <p class="mb-4" style="font-weight: 700; font-size: 16px;">Menghapus Data Mobil</p>
+                                          <p class="mb-4">Yakin ingin menghapus?</p>
+                                          <div class="confirm-button mb-4">
+                                              <button type="button" class="btn btn-primary text-light" style="width: 87px; height: 36;"><a href="/delete/<%- data.ID %>" class="text-decoration-none text-light">Delete</a></button>
+                                              <button type="button" data-dismiss="modal" class="btn btn-outline-primary" style="width: 87px; height: 36;">Tidak</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                            </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>           
+
+<%- include('../partials/tail.ejs') %>
+                  

@@ -1,0 +1,42 @@
+<%- include('../partials/head.ejs') %> 
+
+  <div class="login-page" >
+    <div class="row no-gutters" >
+      <div class="col-8 bg-primary"  >
+          <img src="/images/car-login.png" style="height: 100vh; width: 100%;" alt="halo">
+      </div>
+
+      <div class="col-4 bg-light d-flex align-items-center justify-content-center">
+        <form action="/login" method="POST" class="login-form" style="width: 80%;">
+            <img src="/images/logo.png" alt="">
+            <h3>Welcome, Admin BCR</h3>
+
+            <% if(typeof alert != 'undefined') { %>
+              <% alert.forEach(function(error) { %>
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert" style="font-size: 12px;">
+                      <%= error.msg %>
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+              <% }) %>
+            <% } %>
+            
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" placeholder="Example: binar@gmail.com" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+              <small id="emailHelp" class="form-text text-muted">Input your email. We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input placeholder="6+ characters" type="password" class="form-control" name="password" id="exampleInputPassword1" required>
+            </div>
+            <button type="submit" class="check btn btn-primary" style="width: 100%;">Sign In</button>
+            <p class="message"></p>
+          </form>
+      </div>
+    </div>
+  </div>
+
+<%- include('../partials/tail.ejs') %> 
